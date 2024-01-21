@@ -35,7 +35,7 @@ public class App
                     case 1:
                         System.out.println("Mitä siili sanoo:");
                         String speak = sc.nextLine();
-                        hedgehog = new Hedgehog(speak);
+                        hedgehog.setSpeak(speak);
                         hedgehog.speak();
                         break;
                     case 2:
@@ -44,8 +44,7 @@ public class App
                         hedgehog.setName(name);
                         System.out.println("Anna siilin ikä:");
                         int age = Integer.parseInt(sc.nextLine());
-
-                        hedgehog = new Hedgehog(name, age);
+                        hedgehog.setAge(age);
                         break;
                     case 3:
                         System.out.println("Kuinka monta kierrosta?");
