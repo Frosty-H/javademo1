@@ -42,9 +42,9 @@ public class Hedgehog {
         }
     
 
-    public void run () {
+    /*public void run () {
         System.out.println( name + " juoksee kovaa vauhtia!");
-    }
+    }*/
 
     public void speak () {
         System.out.println( this.name +": "+ this.speak);

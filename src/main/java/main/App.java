@@ -2,6 +2,7 @@ package main;
 
 import java.util.Scanner;
 
+
 /**
  * Hello world!
  *
@@ -34,9 +35,7 @@ public class App
                     case 1:
                         System.out.println("Mitä siili sanoo:");
                         String speak = sc.nextLine();
-                        
                         hedgehog = new Hedgehog(speak);
-                        hedgehog.printSpecs();
                         hedgehog.speak();
                         break;
                     case 2:
@@ -60,6 +59,7 @@ public class App
                     default:
                         System.out.println ("Syöte oli väärä");
                         break;
+                        
             
                     
                     
@@ -68,9 +68,9 @@ public class App
                 }
 
             }
-        sc.close();
+        
 
         } 
-
+        sc.close();
     }
 }
