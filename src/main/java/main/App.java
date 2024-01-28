@@ -1,6 +1,8 @@
 package main;
 
+
 import java.util.Scanner;
+
 
 
 /**
@@ -17,8 +19,8 @@ public class App
         /*System.out.println( "1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma" );*/
 
         //Hedgehog hedgehog = new Hedgehog ();
-        Animal animal =new Animal();
-        Zoo zoo = new Zoo ();
+        
+        Zoo zoo = new Zoo();
 
         /*hedgehog.printSpecs();
         hedgehog.run();*/
@@ -38,24 +40,28 @@ public class App
 
                 switch(i) {
                     case 1:
+                        Animal animal =new Animal();
                         System.out.println("Mikä laji:");
                         String species = sc.nextLine();
-                        animal.setName(species);
+                        animal.setSpecies(species);
                         System.out.println("Anna eläimen nimi:");
                         String name = sc.nextLine();
                         animal.setName(name);
                         System.out.println("Anna eläimen ikä:");
                         int age = Integer.parseInt(sc.nextLine());
                         animal.setAge(age);
+                        zoo.addAnimal(animal);
                         break;
                     
                     case 2:
-                        
-                    /*case 3:
+                        System.out.println(zooname + " pitää sisällään seuraavat eläimet:");
+                        zoo.listAnimals();
+                        break;
+                    case 3:
                         System.out.println("Kuinka monta kierrosta?");
                         int x = Integer.parseInt(sc.nextLine());
-                        animal.round(x-1);
-                        break;*/
+                        zoo.runAnimals(x);
+                        break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");
                         exit =true;

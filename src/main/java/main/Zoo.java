@@ -1,18 +1,41 @@
 package main;
 
+import java.util.ArrayList;
+
+
 public class Zoo {
-    private String zooname; 
+    private String zooname;
+    private ArrayList<Animal> animals; 
     
-    public Zoo() {
-        this.zooname = "Eläintarha";
-        
+    public Zoo () {
+        this.zooname ="Korkeasaari" ;
+        animals = new ArrayList<>();   
     }
+
     public Zoo (String name) {
-        this.zooname = name;
+        this.zooname = name;   
+    }
+
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
         
     }
 
-    
+    public void listAnimals() {
+        for(Animal animal : animals) {
+            animal.printSpecs();
+        }
+    }
+
+    public void runAnimals(int x) {
+        for(Animal animal : animals) {
+            for (int i = 0; i < x; i++) {
+                //eläin juoksee
+                System.out.println(animal.getName() + " juoksee kovaa vauhtia!");
+            }
+        }
+    }
+
 
     /*public Zoo(String speak) {
         this.zooname = "Pikseli";

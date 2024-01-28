@@ -1,11 +1,12 @@
 package main;
 
+
 public class Animal {
     
     private String name; 
     private int age;
     private String species;
-        
+      
     
     public Animal() {
         this.name = "Pikseli";
@@ -33,6 +34,9 @@ public class Animal {
     public void setName(String name) {
         this.name = name;
         }
+    public void setSpecies(String species) {
+        this.species = species;
+        }
         
     
     public void setAge(int age) {
@@ -47,7 +51,7 @@ public class Animal {
         
     /*public void setSpeak(String speak) {
         this.speak = speak;
-        }
+        }*/
     
      public void round (int x) {
          if (x<0){
@@ -68,8 +72,8 @@ public class Animal {
         
     
     */public void printSpecs() {
-        System.out.println( name);
-        System.out.println(age);
-        System.out.println(species);
+        System.out.println(species +": "+ name +", " + age +" vuotta" );
+        
+        
     }
 }
