@@ -16,20 +16,73 @@ public class App
     {
         Scanner sc = new Scanner(System.in);
 
+        University university =new University ();
+
+        boolean exit =false;
+        while(!exit) {
+            
+            System.out.println( "1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijansuoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani" );
+
+            if(sc.hasNext()) {
+                int i = 0;
+                String stringInput = sc.nextLine();
+                i = Integer.parseInt(stringInput);
+
+                switch(i) {
+                    case 1:
+                        Student student =new Student();
+                        System.out.println("Anna opiskelijan nimi?");
+                        String name = sc.nextLine();
+                        student.setName(name);
+                        System.out.println("Anna opiskelijan opiskelijanumero:");
+                        int number = Integer.parseInt(sc.nextLine());
+                        student.setNumber(number);
+                        university. addStudent(student);
+                        break;
+                    
+                    case 2:
+                        university.listStudent();
+                        
+                        break;
+                    case 3:
+                        System.out.println("Kuinka monta kierrosta?");
+                        
+                        
+                        break;
+                    case 0:
+                        System.out.println("Kiitos ohjelman käytöstä.");
+                        exit =true;
+                        break;
+                    default:
+                        System.out.println ("Syöte oli väärä");
+                        break;
+                        
+            
+                    
+                    
+
+
+                }
+
+            }
+        
+
+        }
+
         /*System.out.println( "1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma" );*/
 
         //Hedgehog hedgehog = new Hedgehog ();
         
-        Zoo zoo = new Zoo();
+        //Zoo zoo = new Zoo();
 
         /*hedgehog.printSpecs();
         hedgehog.run();*/
 
-        boolean exit =false;
+        /*boolean exit =false;
         System.out.println( "Anna eläintarhalle nimi:" );
         String zooname = sc.nextLine();
         zoo.setName(zooname);
-        while(!exit) {
+        /*  while(!exit) {
             
             System.out.println( "1) Luo uusi eläin, 2) Listaa kaikki eläimet, 3) Juoksuta eläimiä, 0) Lopeta ohjelma" );
 
@@ -82,7 +135,7 @@ public class App
 
         }
 
-        /*while(!exit) {
+        while(!exit) {
             System.out.println( "1) Pistä siili puhumaan, 2) Luo uusi siili, 3) Juoksuta siiliä, 0) Lopeta ohjelma" );
 
             if(sc.hasNext()) {
