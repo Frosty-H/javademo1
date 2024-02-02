@@ -21,7 +21,7 @@ public class App
         boolean exit =false;
         while(!exit) {
             
-            System.out.println( "1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijansuoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani" );
+            System.out.println( "1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijansuoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani, 7) tallenna opiskelijat tiedostoon, 8) lataa opiskelijat tiedostosta, 0)lopeta ohjelma");
 
             if(sc.hasNext()) {
                 int i = 0;
