@@ -41,6 +41,7 @@ public class App
                         break;
                     
                     case 2:
+                        System.out.println("Opiskelijat:");
                         university.listStudent();
                         
                         break;
