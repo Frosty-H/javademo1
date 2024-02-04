@@ -14,6 +14,14 @@ public class University {
         
     }
 
+    public ArrayList<Student> getStudents() {
+        return this.students;
+    }
+
+    public Student getStudent(int i) {
+        return this.students.get(i);
+    }
+
     public void listStudent() {
         for(Student student : students) {
             student.printSpecs();

@@ -1,6 +1,8 @@
 package main;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -17,6 +19,11 @@ public class App
         Scanner sc = new Scanner(System.in);
 
         University university =new University ();
+
+        int choiceOfStudent = 0;
+        String choiceOfCourse = "";
+        int choiceOfGrade = 0;
+        ArrayList<Student> students = new ArrayList<>();
 
         boolean exit =false;
         while(!exit) {
@@ -46,9 +53,29 @@ public class App
                         
                         break;
                     case 3:
-                        System.out.println("Kuinka monta kierrosta?");
-                        
-                        
+                        students = university.getStudents();
+                        for (int ii = 0; ii < students.size(); ii++) {
+                            System.out.println(ii + ": " + students.get(ii).getName());
+                        }
+                        System.out.println("Mille opiskelijalle suorite lisätään?");
+                        choiceOfStudent = Integer.parseInt(sc.nextLine());
+                        System.out.println("Mille kurssille suorite lisätään?");
+                        choiceOfCourse = sc.nextLine();
+                        System.out.println("Mikä arvosana kurssille lisätään?");
+                        choiceOfGrade = Integer.parseInt(sc.nextLine());
+                        university.getStudent(choiceOfStudent).gradeCourse(choiceOfCourse, choiceOfGrade);
+                        break;
+                    case 4:
+                        students = university.getStudents();
+                        for (int ii = 0; ii < students.size(); ii++) {
+                            System.out.println(ii + ": " + students.get(ii).getName());
+                        }
+                        System.out.println("Minkä opiskelijan suoritteet listataan?");
+                        choiceOfStudent = Integer.parseInt(sc.nextLine());
+                        HashMap<String,Integer> courses = students.get(choiceOfStudent).getCourses();
+                        for (String courseName:courses.keySet()) {
+                            System.out.println(courseName + ": " + courses.get(courseName));
+                        }
                         break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");
