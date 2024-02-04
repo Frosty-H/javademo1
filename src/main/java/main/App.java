@@ -72,10 +72,14 @@ public class App
                         }
                         System.out.println("Minkä opiskelijan suoritteet listataan?");
                         choiceOfStudent = Integer.parseInt(sc.nextLine());
-                        HashMap<String,Integer> courses = students.get(choiceOfStudent).getCourses();
+                        Student stu = students.get(choiceOfStudent);
+                        for (int j = 0; j < stu.getNumberOfCourses(); j++) {
+                            System.out.println(stu.getCourseName(j) + ": " + stu.getCourseGrade(j));
+                        }
+                        /*HashMap<String,Integer> courses = students.get(choiceOfStudent).getCourses();
                         for (String courseName:courses.keySet()) {
                             System.out.println(courseName + ": " + courses.get(courseName));
-                        }
+                        }*/
                         break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");

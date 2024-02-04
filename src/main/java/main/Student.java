@@ -1,12 +1,15 @@
 package main;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 public class Student {
     
     private String name; 
     private int number;
-    private HashMap<String,Integer> courses;
+    //private HashMap<String,Integer> courses;
+    Vector<String> kurssienNimet;
+    Vector<Integer> kurssienArvosanat;
     
     
       
@@ -14,15 +17,19 @@ public class Student {
     public Student() {
         this.name = "Pikseli";
         this.number = 5;
-        this.courses = new HashMap<>();
-         
+        //this.courses = new HashMap<>();
+        this.kurssienNimet = new Vector<String>();
+        this.kurssienArvosanat = new Vector<Integer>(); 
         
         //System.out.println(this.name);
     }
     public Student (String name, int number) {
         this.name = name;
         this.number = number;
-        this.courses = new HashMap<>();
+        //this.courses = new HashMap<>();
+        this.kurssienNimet = new Vector<String>();
+        this.kurssienArvosanat = new Vector<Integer>(); 
+        
     }
     
 
@@ -35,12 +42,26 @@ public class Student {
     }
 
     public void gradeCourse(String course, int grade) {
-        this.courses.put(course, grade);
+        //this.courses.put(course, grade);
+        this.kurssienNimet.add(course);
+        this.kurssienArvosanat.add(Integer.valueOf(grade));
     }
 
-    public HashMap<String,Integer> getCourses() {
-        return this.courses;
+    public String getCourseName(int i) {
+        return this.kurssienNimet.get(i);
     }
+
+    public int getCourseGrade(int i) {
+        return this.kurssienArvosanat.get(i).intValue();
+    }
+
+    public int getNumberOfCourses() {
+        return this.kurssienArvosanat.size();
+    }
+
+    //public HashMap<String,Integer> getCourses() {
+    //    return this.courses;
+    //}
 
     public void setNumber(int number) {
         this.number = number;
