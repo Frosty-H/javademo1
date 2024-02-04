@@ -1,15 +1,17 @@
 package main;
 
-import java.util.HashMap;
+import java.io.Serializable;
+//import java.util.HashMap;
 import java.util.Vector;
 
-public class Student {
+public class Student implements Serializable{
     
     private String name; 
     private int number;
     //private HashMap<String,Integer> courses;
     Vector<String> kurssienNimet;
     Vector<Integer> kurssienArvosanat;
+    private static final long serialVersionUID = 24234298L;
     
     
       

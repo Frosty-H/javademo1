@@ -2,7 +2,7 @@ package main;
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
+//import java.util.HashMap;
 import java.util.Scanner;
 
 
@@ -28,7 +28,7 @@ public class App
         boolean exit =false;
         while(!exit) {
             
-            System.out.println( "1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijansuoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani, 7) tallenna opiskelijat tiedostoon, 8) lataa opiskelijat tiedostosta, 0)lopeta ohjelma");
+            System.out.println( "1) Lisää opiskelija, 2) Listaa opiskelijat, 3) Lisää opiskelijalle suorite, 4) Listaa opiskelijan suoritteet, 5) Laske opiskelijan suoritusten keskiarvo, 6) Laske opiskelijan suoritusten mediaani, 7) Tallenna opiskelijat tiedostoon, 8) Lataa opiskelijat tiedostosta, 0) Lopeta ohjelma");
 
             if(sc.hasNext()) {
                 int i = 0;
@@ -80,6 +80,28 @@ public class App
                         for (String courseName:courses.keySet()) {
                             System.out.println(courseName + ": " + courses.get(courseName));
                         }*/
+                        break;
+                    case 5:
+                        students = university.getStudents();
+                        for (int ii = 0; ii < students.size(); ii++) {
+                            System.out.println(ii + ": " + students.get(ii).getName());
+                        }
+                        System.out.println("Minkä opiskelijan suoritteiden keskiarvo lasketaan?");
+                        choiceOfStudent = Integer.parseInt(sc.nextLine());
+                        break;
+                    case 6:
+                        students = university.getStudents();
+                        for (int ii = 0; ii < students.size(); ii++) {
+                            System.out.println(ii + ": " + students.get(ii).getName());
+                        }
+                        System.out.println("Minkä opiskelijan suoritteiden mediaani lasketaan?");
+                        choiceOfStudent = Integer.parseInt(sc.nextLine());
+                        break;
+                    case 7:
+                        university.saveStudents();
+                        break;
+                    case 8:
+                        university.loadStudents();
                         break;
                     case 0:
                         System.out.println("Kiitos ohjelman käytöstä.");
