@@ -24,6 +24,7 @@ public class App
         String choiceOfCourse = "";
         int choiceOfGrade = 0;
         ArrayList<Student> students = new ArrayList<>();
+        Calculator calculator = new Calculator ();
 
         boolean exit =false;
         while(!exit) {
@@ -88,6 +89,10 @@ public class App
                         }
                         System.out.println("Minkä opiskelijan suoritteiden keskiarvo lasketaan?");
                         choiceOfStudent = Integer.parseInt(sc.nextLine());
+                        double muuttuja =calculator.getAverageGrade(students.get(choiceOfStudent));
+                        System.out.println("Keskiarvo on " + calculator.roundToDecimal(muuttuja, 1
+                        ));
+
                         break;
                     case 6:
                         students = university.getStudents();
